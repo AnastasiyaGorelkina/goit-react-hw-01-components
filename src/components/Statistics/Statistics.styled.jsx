@@ -23,13 +23,14 @@ display: flex;
 margin: 0;
 width: 100vh;
 padding: 0;
-
+justify-content: center;
 `;
 
 export const StatLiistItem = styled.li`
 display: flex;
 flex-direction: column;
 padding:15px 11px;
+
 `;
  
 export const StatsName = styled.span`
