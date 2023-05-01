@@ -11,7 +11,9 @@ export const Statistics = ({ title, stats}) => {
   <StatLiist>
     {stats.map(({ id, label, percentage }) => {
         return (
-            <StatLiistItem key={id}>
+            <StatLiistItem
+                key={id}
+                style={{ backgroundColor: `#${Math.floor(Math.random() * 16777215).toString(16)}` }}>
                 <StatsName>{label}</StatsName>
                 <StatsPercentage>{percentage}%</StatsPercentage>
             </StatLiistItem>

@@ -1,13 +1,21 @@
 import PropTypes from 'prop-types';
 
-import { FriendGalleryItem, FriendStatus, FriendAvatar, FriendName } from './FriendList.styled';
+import { FriendGalleryItem, FriendStatus, FriendAvatar, FriendName, FriendsContainer } from './FriendList.styled';
 
-export const FriendListItem = ({ avatar, name, isOnline }) => {
+function getStatus(status) {
+  return status ? 'green' : 'red';
+};
+
+export const FriendListItem = ({ id, avatar, name, isOnline }) => {
     return (
-     <FriendGalleryItem>
-        <FriendStatus>{isOnline}</FriendStatus>
+      <FriendGalleryItem key={id}>
+        <FriendsContainer>
+        <FriendStatus style={{
+          backgroundColor: getStatus(isOnline),
+        }}>{isOnline}</FriendStatus>
         <FriendAvatar src={avatar} alt={name} width="48" />
-        <FriendName>{name}</FriendName>
+          <FriendName>{name}</FriendName>
+          </FriendsContainer>
      </FriendGalleryItem>
     ); 
 };
