@@ -9,9 +9,13 @@ import data from 'components/data/data.json';
 import { FriendList } from 'components/FriendList/FriendList';
 import friends from 'components/data/friends.json';
 
+import { TransactionHistory } from 'components/TransactionHistory/TransactionHistory';
+import transactions from 'components/data/transactions.json';
+
 export const App = () => {
   return (
     <Container>
+      
       <Profile
   username={user.username}
   tag={user.tag}
@@ -25,6 +29,8 @@ export const App = () => {
       <Statistics stats={data} />    
       
       <FriendList friends={friends} />
+
+      <TransactionHistory items={transactions} />;
       
     </Container>
     
